@@ -1,6 +1,7 @@
 body {
-    background: #000;
+    background-image: url("images/landing-1.png");
   }
+
 /* keeping style block in body to make it easier to see the relationship between elements */
 
 /* Container is nothing special; it's the element that is made full screen.
@@ -51,75 +52,53 @@ body {
   /* the transform itself is set programatically, since it needs to take into account the HMD orientation */
 }
 
-.pane {
-  overflow: hidden;
-}
 
-.pane > img {
-  width: 200px;
+
+
+
+
+/*-----------------------------------------*/
+
+#hud {
+  transform: translate(-50%, -50%) scale(1) translate3d(0, 0, 500px);
+  background: rgba(29,185,146,0.3);
+  width: 1280px;
   height: 300px;
+  padding: 0;
+  margin: 0;
 }
 
-/* XXX The translate -100,-150 moves the center of each element to 0,0.  transform-origin
- * at 50% 50% should take care of that, but I'm not sure why it's not.  (It transforms
- * by half the width/height).
- */
-#pane1 {
-  transform: translate(-50%, -50%) scale(1) translate3d(0, 0, 800px);
-  /*width: 320px;
-  height: 480px;*/
+
+#locationbar {
+    transform: translate(-50%, -50%) scale(1) translate3d(640px, 54px, 0px);
+    background: white;
+    border-radius: 10px; 
+    width: 118px;
+    height: 22px;
+    padding: 0;
+    margin: 0;
 }
 
-.seats {
-  height: 100px;
-  width: 1400px;
-  background: url('images/seat.png') repeat-x transparent;
+#bookmarks {
+    transform: translate(-50%, -50%) scale(1) translate3d(640px, 150px, 0px);
+    background: rgba(29,185,146,1);
+    width: 504px;
+    height: 140px;
+    padding: 0;
+    margin: 0;
 }
-.row1 {
-  transform: translate(-50%, -50%) scale(1) translate3d(0, 250px, 650px);
+
+.bookmark {
+  background: rgba(29,185,146,1);
+  padding: 5px;
+  width: 72px;
+  height: 72px;
 }
-.row2 {
-  transform: translate(-50%, -50%) scale(1) translate3d(0, 200px, 400px);
-}
-.row3 {
-  transform: translate(-50%, -50%) scale(1) translate3d(0, 150px, 150px);
-}
-.row4 {
-  transform: translate(-50%, -50%) scale(1) translate3d(0, 100px, -100px);
-}
-.row5 {
-  transform: translate(-50%, -50%) scale(1) translate3d(0, 50px, -350px);
-}
-.row6 {
-  transform: translate(-50%, -50%) scale(1) translate3d(0, 0px, -600px);
-}
-.row7 {
-  transform: translate(-50%, -50%) scale(1) translate3d(0, -50px, -850px);
-}
-.row8 {
-  transform: translate(-50%, -50%) scale(1) translate3d(0, -100px, -1100px);
-}
-.exit {
-  transform: rotateY(-90deg) scale(.8,1) translate3d(400px,0,800px);
-  color: #0f0;
-  font-family: sans-serif;
-  text-shadow: 0 0 3px #0f0, 0 0 4px #0f0, 0 0 5px #0f0, 0 0 6px #0f0;
-}
+
 .projector {
   width: 72px;
   height: 30px;
   background: #888;
   box-shadow: 0 2px 10px rgba(255,255,255,.5), 0 4px 20px rgba(255,255,255,.5), 0 2px 30px rgba(255,255,255,.5), 0 2px 40px rgba(255,255,255,.5);
   transform: translate3d(0,-500px,-1200px);
-  animation: .005s flicker linear infinite alternate;
-  animation-timing-function: steps(2, end);
-}
-
-@keyframes flicker {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: .8;
-  }
 }
