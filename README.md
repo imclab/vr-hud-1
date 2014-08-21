@@ -1,1 +1,1 @@
-## Quick boilerplate CSS VR scene
+A DOM VR HUD experiment

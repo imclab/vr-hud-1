@@ -34,20 +34,23 @@ gulp.task('content', function() {
 });
 
 gulp.task('bowercopy', function() {
-  gulp.src(['bower_components/fira/**/*.*'])
-    .pipe(gulp.dest('build/fonts'));
+  gulp.src(['bower_components/**/*.*'])
+    .pipe(gulp.dest('build/js'));
 })
 
 
 
 gulp.task('default', function() {
-  gulp.run('scripts', 'styles', 'content', 'markdown');
+  gulp.run('scripts', 'styles', 'content', 'bowercopy','markdown');
 
   gulp.watch('src/sass/**', function(event) {
     gulp.run('styles');
   });
   gulp.watch('src/jade/**', function(event) {
     gulp.run('content');
+  });
+  gulp.watch('src/scripts/**', function(event) {
+    gulp.run('scripts');
   });
 
 });

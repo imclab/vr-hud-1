@@ -13,6 +13,8 @@
     "test",
     "tests"
   ],
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
+    "velocity": "~0.11.7"
   }
 }
